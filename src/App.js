@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import Row from "./components/Row";
 import { useState } from "react";
+import ltlogo from "./ltlogo.png";
+import ranchlogo from "./ranchlogo.jpg";
 function App() {
   const [scoreHome, setScoreHome] = useState("0");
   const [scoreAway, setScoreAway] = useState("0");
@@ -24,48 +26,63 @@ function App() {
     setQuarter(event.target.value);
   };
   return (
-    <Container className="App" style={{ height: "600px" }}>
+    <Container className="App" style={{ height: "800px" }}>
       <Grid
         style={{ height: "100%" }}
         container
         justify="space-between"
         alignItems="flex-start"
       >
-        <Grid item style={{ height: "100%" }} xs={3}>
+        <Grid item style={{ height: "100%", display: "flex" }}>
           <Row team={"FARMERS"} score={scoreHome}></Row>
-          <Row team={"RAZORFAQS"} score={scoreAway}></Row>
-          <Paper style={{ height: "30px", width: "40px" }}>
+          <Row team={"NORTHERN LIGHTS"} score={scoreAway}></Row>
+          <Paper square={true} style={{ height: "60px", width: "60px" }}>
             <div
               style={{
+                // width: "70px",
+                backgroundColor: "#545454",
+                color: "white",
+                height: "100%",
+                width: "100%",
+                // borderRadius: "5px",
                 display: "flex",
                 alignItems: "center",
-                flexDirection: "row",
-                height: "100%",
-                backgroundColor: "white",
-                justifyContent: "space-between",
+                justifyContent: "center",
+                justifySelf: "end",
+                // boxShadow: "inset 1px 1px 3px 2px rgba(0,0,0,0.75)",
               }}
             >
-              {/* <img style={{ maxHeight: "40px" }} src={farmers} alt="Logo" /> */}
-
-              <div
-                style={{
-                  backgroundColor: "#545454",
-                  color: "white",
-                  height: "100%",
-                  width: "100%",
-                  // borderRadius: "5px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  justifySelf: "end",
-                  // boxShadow: "inset 1px 1px 3px 2px rgba(0,0,0,0.75)",
-                }}
-              >
-                <Typography color="inherit" variant="body">
-                  {quarter}
-                </Typography>
-              </div>
+              <Typography variant="h5" color="inherit">
+                {quarter}
+              </Typography>
             </div>
+          </Paper>
+          <Paper
+            square={true}
+            style={{
+              height: "60px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {/* <Typography
+              variant="h5"
+              style={{ marginLeft: "10px" }}
+              display="inline"
+              align="center"
+            >
+              OTTELUN TARJOAA:
+            </Typography> */}
+            <img
+              alt="lt"
+              style={{ height: "60px", marginLeft: "10px" }}
+              src={ltlogo}
+            ></img>
+            <img
+              alt="ranch"
+              style={{ height: "60px", marginLeft: "10px" }}
+              src={ranchlogo}
+            ></img>
           </Paper>
         </Grid>
         <Grid item xs={12}>

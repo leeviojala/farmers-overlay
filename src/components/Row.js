@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Paper } from "@material-ui/core";
 export default function Row(props) {
   return (
-    <Paper style={{ height: "40px" }}>
+    <Paper style={{ height: "60px" }} square={true}>
       <div
         style={{
           display: "flex",
@@ -16,7 +16,7 @@ export default function Row(props) {
         {/* <img style={{ maxHeight: "40px" }} src={farmers} alt="Logo" /> */}
         <Typography
           color="inherit"
-          variant="h6"
+          variant="h4"
           style={{ padding: "0px 12px 0px 6px" }}
         >
           {props.team}
@@ -26,7 +26,7 @@ export default function Row(props) {
             backgroundColor: "#212121",
             color: "white",
             height: "100%",
-            width: "30px",
+            width: "60px",
             // borderRadius: "5px",
             display: "flex",
             alignItems: "center",
@@ -35,7 +35,7 @@ export default function Row(props) {
             // boxShadow: "inset 1px 1px 3px 2px rgba(0,0,0,0.75)",
           }}
         >
-          <Typography color="inherit" variant="h6">
+          <Typography color="inherit" variant="h4">
             {props.score}
           </Typography>
         </div>
