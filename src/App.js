@@ -35,7 +35,7 @@ function App() {
       >
         <Grid item style={{ height: "100%", display: "flex" }}>
           <Row team={"FARMERS"} score={scoreHome}></Row>
-          <Row team={"NORTHERN LIGHTS"} score={scoreAway}></Row>
+          <Row team={"VELJMIEHET"} score={scoreAway}></Row>
           <Paper square={true} style={{ height: "60px", width: "60px" }}>
             <div
               style={{
