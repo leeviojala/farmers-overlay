@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core";
 import Row from "./components/Row";
 import { useState } from "react";
-import ltlogo from "./ltlogo.png";
 import ranchlogo from "./ranchlogo.jpg";
 import olutlogo from "./olutmestari.png";
 function App() {
