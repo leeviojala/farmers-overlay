@@ -12,6 +12,7 @@ import Row from "./components/Row";
 import { useState } from "react";
 import ltlogo from "./ltlogo.png";
 import ranchlogo from "./ranchlogo.jpg";
+import olutlogo from "./olutmestari.png";
 function App() {
   const [scoreHome, setScoreHome] = useState("0");
   const [scoreAway, setScoreAway] = useState("0");
@@ -35,7 +36,7 @@ function App() {
       >
         <Grid item style={{ height: "100%", display: "flex" }}>
           <Row team={"FARMERS"} score={scoreHome}></Row>
-          <Row team={"GOATS"} score={scoreAway}></Row>
+          <Row team={"NORTHERN LIGHTS"} score={scoreAway}></Row>
           <Paper square={true} style={{ height: "60px", width: "60px" }}>
             <div
               style={{
@@ -76,7 +77,7 @@ function App() {
             <img
               alt="lt"
               style={{ height: "60px", marginLeft: "10px" }}
-              src={ltlogo}
+              src={olutlogo}
             ></img>
             <img
               alt="ranch"
