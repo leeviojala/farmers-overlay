@@ -10,8 +10,6 @@ import {
 } from "@material-ui/core";
 import Row from "./components/Row";
 import { useState } from "react";
-import ranchlogo from "./ranchlogo.jpg";
-import olutlogo from "./olutmestari.png";
 function App() {
   const [scoreHome, setScoreHome] = useState("0");
   const [scoreAway, setScoreAway] = useState("0");
@@ -73,16 +71,7 @@ function App() {
             >
               OTTELUN TARJOAA:
             </Typography> */}
-            <img
-              alt="lt"
-              style={{ height: "60px", marginLeft: "10px" }}
-              src={olutlogo}
-            ></img>
-            <img
-              alt="ranch"
-              style={{ height: "60px", marginLeft: "10px" }}
-              src={ranchlogo}
-            ></img>
+         
           </Paper>
         </Grid>
         <Grid item xs={12}>
