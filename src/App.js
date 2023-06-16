@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import Row from "./components/Row";
 import { useState } from "react";
+import panchologo from "./pancho.png";
+import olutlogo from "./olut.png";
 function App() {
   const [scoreHome, setScoreHome] = useState("0");
   const [scoreAway, setScoreAway] = useState("0");
@@ -61,6 +63,7 @@ function App() {
               height: "60px",
               display: "flex",
               alignItems: "center",
+              paddingRight: "8px"
             }}
           >
             {/* <Typography
@@ -71,7 +74,16 @@ function App() {
             >
               OTTELUN TARJOAA:
             </Typography> */}
-         
+            <img
+              alt="lt"
+              style={{ height: "60px", marginLeft: "10px" }}
+              src={olutlogo}
+            ></img>
+            <img
+              alt="ranch"
+              style={{ height: "50px", marginLeft: "10px" }}
+              src={panchologo}
+            ></img>
           </Paper>
         </Grid>
         <Grid item xs={12}>
