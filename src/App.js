@@ -28,14 +28,22 @@ function App() {
   return (
     <Container className="App" style={{ height: "800px" }}>
       <Grid
-        style={{ height: "100%"}}
+        style={{ height: "100%" }}
         container
         justify="space-between"
         alignItems="flex-start"
       >
-        <Grid item style={{ height: "100%", width: "100%", display: "flex", justifyContent: "center" }}>
-          <Row team={"FARMERS"} score={scoreHome}></Row>
-          <Row team={"GOATS"} score={scoreAway}></Row>
+        <Grid
+          item
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Row team={"FLYING FISHCOCKS"} score={scoreHome}></Row>
+          <Row team={"NORDMEN"} score={scoreAway}></Row>
           <Paper square={true} style={{ height: "60px", width: "60px" }}>
             <div
               style={{
@@ -63,7 +71,7 @@ function App() {
               height: "60px",
               display: "flex",
               alignItems: "center",
-              paddingRight: "8px"
+              paddingRight: "8px",
             }}
           >
             {/* <Typography
