@@ -43,7 +43,7 @@ function App() {
           }}
         >
           <Row team={"FLYING FISHCOCKS"} score={scoreHome}></Row>
-          <Row team={"NORDMEN"} score={scoreAway}></Row>
+          <Row team={"JAGUARS"} score={scoreAway}></Row>
           <Paper square={true} style={{ height: "60px", width: "60px" }}>
             <div
               style={{
