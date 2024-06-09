@@ -7,23 +7,34 @@ import {
   TextField,
   Select,
   MenuItem,
-} from "@material-ui/core";
+  Button,
+  Stack,
+} from "@mui/material";
 import Row from "./components/Row";
 import { useState } from "react";
-import panchologo from "./pancho.png";
-import olutlogo from "./olut.png";
 function App() {
   const [scoreHome, setScoreHome] = useState("0");
   const [scoreAway, setScoreAway] = useState("0");
   const [quarter, setQuarter] = useState("");
+  const [showTeamMenu, setShowTeamMenu] = useState(false);
+  const [homeTeam, setHomeTeam] = useState("");
+  const [awayTeam, setAwayTeam] = useState("");
+
   const handleHome = (event) => {
     setScoreHome(event.target.value);
   };
+
   const handleAway = (event) => {
     setScoreAway(event.target.value);
   };
   const handleQuarter = (event) => {
     setQuarter(event.target.value);
+  };
+  const handleAwayTeam = (event) => {
+    setAwayTeam(event.target.value);
+  };
+  const handleHomeTeam = (event) => {
+    setHomeTeam(event.target.value);
   };
   return (
     <Container className="App" style={{ height: "800px" }}>
@@ -42,8 +53,8 @@ function App() {
             justifyContent: "center",
           }}
         >
-          <Row team={"FLYING FISHCOCKS"} score={scoreHome}></Row>
-          <Row team={"JAGUARS"} score={scoreAway}></Row>
+          <Row team={homeTeam} score={scoreHome}></Row>
+          <Row team={awayTeam} score={scoreAway}></Row>
           <Paper square={true} style={{ height: "60px", width: "60px" }}>
             <div
               style={{
@@ -65,7 +76,7 @@ function App() {
               </Typography>
             </div>
           </Paper>
-          <Paper
+          {/* <Paper
             square={true}
             style={{
               height: "60px",
@@ -74,14 +85,14 @@ function App() {
               paddingRight: "8px",
             }}
           >
-            {/* <Typography
+            <Typography
               variant="h5"
               style={{ marginLeft: "10px" }}
               display="inline"
               align="center"
             >
               OTTELUN TARJOAA:
-            </Typography> */}
+            </Typography>
             <img
               alt="lt"
               style={{ height: "60px", marginLeft: "10px" }}
@@ -92,7 +103,7 @@ function App() {
               style={{ height: "50px", marginLeft: "10px" }}
               src={panchologo}
             ></img>
-          </Paper>
+          </Paper> */}
         </Grid>
         <Grid item xs={12}>
           <Paper
@@ -103,37 +114,64 @@ function App() {
               // bottom: "0",
             }}
           >
-            <Grid container spacing={4} style={{ margin: "16px" }}>
-              <Grid item>
-                <TextField
-                  id="filled-name"
-                  variant="outlined"
-                  label="Pisteet Koti"
-                  onBlur={handleHome}
-                ></TextField>
-              </Grid>
-              <Grid item>
-                <TextField
-                  variant="outlined"
-                  label="Pisteet vieras"
-                  onBlur={handleAway}
-                ></TextField>
-              </Grid>
-              <Grid item>
-                <Select
-                  variant="outlined"
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={quarter}
-                  onChange={handleQuarter}
+            <Stack direction="row" spacing={2}>
+              <TextField
+                id="filled-name"
+                variant="outlined"
+                label="Pisteet Koti"
+                onBlur={handleHome}
+              ></TextField>
+
+              <TextField
+                variant="outlined"
+                label="Pisteet vieras"
+                onBlur={handleAway}
+              ></TextField>
+
+              <Select
+                variant="outlined"
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="neljännes"
+                value={quarter}
+                onChange={handleQuarter}
+              >
+                <MenuItem value={"1ST"}>1</MenuItem>
+                <MenuItem value={"2ND"}>2</MenuItem>
+                <MenuItem value={"3RD"}>3</MenuItem>
+                <MenuItem value={"4TH"}>4</MenuItem>
+              </Select>
+
+              {showTeamMenu ? (
+                <Stack direction="row">
+                  <TextField
+                    variant="outlined"
+                    label="Kotijoukkue"
+                    onBlur={handleHomeTeam}
+                  ></TextField>
+
+                  <TextField
+                    variant="outlined"
+                    label="Vierasjoukkue"
+                    onBlur={handleAwayTeam}
+                  ></TextField>
+
+                  <Button
+                    variant="contained"
+                    onClick={() => setShowTeamMenu(false)}
+                  >
+                    Valmis
+                  </Button>
+                </Stack>
+              ) : (
+                <Button
+                  variant="contained"
+                  onClick={() => setShowTeamMenu(true)}
                 >
-                  <MenuItem value={"1ST"}>1</MenuItem>
-                  <MenuItem value={"2ND"}>2</MenuItem>
-                  <MenuItem value={"3RD"}>3</MenuItem>
-                  <MenuItem value={"4TH"}>4</MenuItem>
-                </Select>
-              </Grid>
-            </Grid>
+                  Vaihda joukkueet
+                </Button>
+              )}
+            </Stack>
           </Paper>
         </Grid>
       </Grid>

@@ -1,5 +1,5 @@
+import { Typography, Paper } from "@mui/material";
 import React from "react";
-import { Typography, Paper } from "@material-ui/core";
 export default function Row(props) {
   return (
     <Paper style={{ height: "60px" }} square={true}>
